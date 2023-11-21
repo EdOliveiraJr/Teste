@@ -1,0 +1,18 @@
+services:
+    postgres:
+        container_name: testdb_spring
+        image: postgres:alpine
+        environment:
+            POSTGRES_PASSWORD: postgres
+            POSTGRES_DB: testdb_spring
+        ports:
+            - 6532:5432
+        volumes:
+            - testdb_spring:/var/lib/postgresql/data
+
+volumes:
+    testdb_spring:
+        name: testdb_spring
+    testdb_spring_storage:
+        name: testdb_spring_storage
+
